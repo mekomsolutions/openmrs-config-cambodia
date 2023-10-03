@@ -41,4 +41,57 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>validator</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.openmrs.maven.plugins</groupId>
+            <artifactId>openmrs-packager-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>validate-configurations</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>validate-configurations</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>openmrs-repo</id>
+      <name>OpenMRS Public Repository</name>
+      <url>https://mavenrepo.openmrs.org/public</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>openmrs-snapshots</id>
+      <name>OpenMRS Public Repository</name>
+      <url>https://mavenrepo.openmrs.org/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+    <pluginRepository>
+      <id>mks-nexus-public</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>mks-nexus-snapshots</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
 </project>
